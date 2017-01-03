@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { configureStore } from './stores';
+import {
+  Provider
+} from 'react-redux';
+import { configureStore } from './Store';
+import './styles/index.scss';
 
-const store = configureStore();
+require('es6-promise').polyfill();
+
 const rootEl = document.getElementById('root');
+const store = configureStore();
 
-let render = () => {
+function render() {
   const Routes = require('./Routes').default;
   ReactDOM.render(
     <Provider store={store}>
@@ -14,29 +19,12 @@ let render = () => {
     </Provider>,
     rootEl
   );
-};
+}
 
 if (module.hot) {
   // Support hot reloading of components
-  // and display an overlay for runtime errors
-  const renderApp = render;
-  const renderError = (error) => {
-    const RedBox = require('redbox-react');
-    ReactDOM.render(
-      <RedBox error={error} />,
-      rootEl
-    );
-  };
-
-  render = () => {
-    try {
-      renderApp();
-    } catch (error) {
-      renderError(error);
-    }
-  };
-
   module.hot.accept('./Routes', render);
 }
 
 render();
+

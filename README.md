@@ -1,14 +1,16 @@
+<!--- TODO remove all unnecesary packages --->
+
 # web-boilerplate
-A template for new front-end projects.
+A template for new react redux projects.
 
 ## Using
 1. Clone the repo
 ```
-git clone https://github.com/smashingboxes/web-boilerplate
+git clone https://github.com/jahammo2/react-redux-boilerplate.git
 ```
-2. Move `web-boilerplate` to your project name
+2. Move `react-redux-boilerplate` to your project name
 ```
-mv web-boilerplate *PROJECT_NAME*
+mv react-redux-boilerplate *PROJECT_NAME*
 cd *PROJECT_NAME*
 ```
 3. Delete the .git folder inside it
@@ -22,12 +24,6 @@ git init
 5. Change the package.json file to information about your project
 6. Delete this README and create a new one for your project
 7. Commit all the files as an initial commit and push to your origin
-```
-git remote set-url origin https://github.com/smashingboxes/*PROJECT_NAME*.git
-git add .
-git commit -m "Initial commit"
-git push origin master
-```
 
 ## Commands
 
